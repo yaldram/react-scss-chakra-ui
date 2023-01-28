@@ -5,6 +5,17 @@ import { resolve } from "path";
 import { peerDependencies } from "./package.json";
 
 export default defineConfig({
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `
+          @use "./src/css/variables/_fonts.scss" as *;
+          @use "./src/css/variables/_spacings.scss" as *;
+          @use "./src/css/variables/_colors.scss" as *;
+        `,
+      },
+    },
+  },
   build: {
     outDir: "dist",
     sourcemap: true,
