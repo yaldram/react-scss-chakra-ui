@@ -1,0 +1,268 @@
+@use "sass:map";
+
+/* base button styles */
+.button {
+  border: none;
+  outline: none;
+  font-family: inherit;
+  cursor: pointer;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0.25em 0.75em;
+  font-weight: $font-weight-semibold;
+
+  text-align: center;
+  line-height: 1.1;
+  transition: 220ms all ease-in-out;
+
+  border-radius: 0.375rem; 
+
+  &:focus {
+    box-shadow: outline;
+  }
+
+  &:hover, &:hover:disabled {
+    background: initial;
+  }
+
+  &:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    box-shadow: none;
+  }
+
+  /* isFullWidth prop */
+  &.isFullWidth {
+    width: 100%;
+  }
+
+  /* button size xs */
+  &.xs {
+    height: 1.5rem;      
+    min-width: 1.5rem;
+    font-size: $font-size-xs;
+    padding-left: $spacing-xs;
+    padding-right: $spacing-xs;
+  }
+
+    /* button size sm */
+  &.sm {
+    height: 2rem;      
+    min-width: 2rem;
+    font-size: $font-size-sm;
+    padding-left: $spacing-sm;
+    padding-right: $spacing-sm;
+  }
+
+  /* button size md */
+  &.md {
+    height: 2.5rem;      
+    min-width: 2.5rem;
+    font-size: $font-size-md;
+    padding-left: $spacing-md;
+    padding-right: $spacing-md;
+  }
+
+  /* button size lg */
+  &.lg {
+    height: 3rem;      
+    min-width: 3rem;
+    font-size: $font-size-lg;
+    padding-left: $spacing-lg;
+    padding-right: $spacing-lg;
+  }
+}
+
+/* button variant link */
+.button.link {
+  --color: none;
+  --active-color: none;
+
+  background: none;
+  line-height: normal;
+  vertical-align: baseline;
+  color: var(--color);
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:hover:disabled {
+    text-decoration: none;
+  }
+
+  &:active {
+    color: var(--active-color);
+  }
+
+  @each $color in $colors-list {
+    $color-200: map.get($colors-map, #{$color + '200'});
+    $color-500: map.get($colors-map, #{$color + '500'});
+    $color-700: map.get($colors-map, #{$color + '700'});
+
+    &.link.#{"" + $color} {
+      --color: #{$color-500};
+      --active-color: #{$color-700};
+
+      [data-theme="dark"] & {
+        --color: #{$color-200};
+        --active-color: #{$color-500};
+      }
+    }
+  }
+}
+
+/* button variant unstyled */
+.button.unstyled {
+  background: none;
+  color: inherit;
+  display: inline;
+  line-height: inherit;
+  margin: 0;
+
+  [data-theme="dark"] & {
+    color: #{map.get($colors-map, "white")};
+  }
+}
+
+/* button variant solid */
+.button.solid {
+  --bg: none;
+  --color: var(--color-black);
+  --bg-hover: none;
+  --bg-active: none;
+
+  background: var(--bg);
+  color: var(--color);
+
+  &:hover {
+    background: var(--bg-hover);
+  }
+
+  &:hover:disabled {
+    background: var(--bg);
+  } 
+
+  &:active {
+    background: var(--bg-active);
+  }
+}
+
+@each $color in $colors-list {
+  @if ($color == gray) {
+    .button.solid.gray {
+      --bg : #{map.get($colors-map, "gray100")};
+      --bg-hover: #{map.get($colors-map, "gray200")};
+      --color: #{map.get($colors-map, "black")};
+      --bg-active: #{map.get($colors-map, "gray300")}; 
+    }
+  } @else if ($color == yellow or $color == cyan) {
+    .button.solid.#{"" + $color} {
+      --bg : #{map.get($colors-map, #{$color + '400'})};
+      --bg-hover: #{map.get($colors-map, #{$color + '500'})};
+      --color: #{map.get($colors-map, "black")};
+      --bg-active: #{map.get($colors-map, #{$color + '600'})};
+    }
+  } @else {
+    .button.solid.#{"" + $color} {
+      --bg : #{map.get($colors-map, #{$color + '500'})};
+      --color: #{map.get($colors-map, "white")};
+      --bg-hover: #{map.get($colors-map, #{$color + '600'})};
+      --bg-active: #{map.get($colors-map, #{$color + '700'})};
+    }
+  }
+}
+
+@each $color in $colors-list {
+  @if ($color == gray) {
+    [data-theme="dark"] .button.solid.gray {
+      --bg : #{map.get($colors-map, "whiteAlpha200")}; 
+      --color: #{map.get($colors-map, "whiteAlpha900")};
+      --bg-hover: #{map.get($colors-map, "whiteAlpha300")};
+      --bg-active: #{map.get($colors-map, "whiteAlpha400")};
+    }
+  } @else {
+    [data-theme="dark"] .button.solid.#{"" + $color} {
+      --bg : #{map.get($colors-map, #{$color + '200'})};
+      --color: #{map.get($colors-map, "gray800")};
+      --bg-hover: #{map.get($colors-map, #{$color + '300'})};
+      --bg-active: #{map.get($colors-map, #{$color + '400'})};
+    }
+  }
+}
+
+
+/* button variant ghost */
+.button.ghost {
+  --color: none;
+  --bg-hover: none;
+  --bg-active: none;
+
+  color: var(--color);
+  background: transparent;
+
+  &:hover {
+    background: var(--bg-hover);
+  }
+
+  &:active {
+    background: var(--bg-active);
+  }
+}
+
+.button.outline {
+  --color: none;
+  --bg-hover: none;
+  --bg-active: none;
+
+  color: var(--color);
+  background: transparent;
+  border: 1px solid currentColor;
+
+  &:hover {
+    background: var(--bg-hover);
+  }
+
+  &:active {
+    background: var(--bg-active);
+  }
+}
+
+@each $color in $colors-list {
+  @if ($color == gray) {
+    .button.ghost.gray, .button.outline.gray {
+      --color: inherit;
+      --bg-hover: #{map.get($colors-map, "gray100")};
+      --bg-active: #{map.get($colors-map, "gray200")};
+    }
+  } @else {
+    .button.ghost.#{"" + $color}, .button.outline.#{"" + $color} {
+      --color: #{map.get($colors-map, #{$color + '600'})};
+      --bg-hover: #{map.get($colors-map, #{$color + '50'})};
+      --bg-active: #{map.get($colors-map, #{$color + '100'})};
+    }
+  }
+}
+
+@each $color in $colors-list {
+  @if ($color == "gray") {
+    [data-theme="dark"] .button.ghost.gray, 
+    [data-theme="dark"] .button.outline.gray {
+      --color: #{map.get($colors-map, "whiteAlpha900")};
+      --bg-hover: #{map.get($colors-map, "whiteAlpha200")};
+      --bg-active: #{map.get($colors-map, "whiteAlpha300")};
+    }
+  } @else {
+    [data-theme="dark"] .button.ghost.#{"" + $color}, 
+    [data-theme="dark"] .button.outline.#{"" + $color} {
+      $fg-color: map.get($colors-map, #{$color + '200'});
+      
+      --color: #{$fg-color};
+      --bg-hover: #{rgba($fg-color, 0.12)};
+      --bg-active: #{rgba($fg-color, 0.12)};
+    }
+  }
+}
