@@ -17,7 +17,9 @@
     }
   },
   "scripts": {
-    "build": "tsc && vite build"
+    "build": "tsc && vite build",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "repository": {
     "type": "git",
@@ -36,11 +38,20 @@
   "homepage": "https://github.com/yaldram/react-scss-chakra-ui#readme",
   "devDependencies": {
     "@rollup/plugin-typescript": "^11.0.0",
+    "@storybook/addon-essentials": "^7.0.0-beta.36",
+    "@storybook/addon-interactions": "^7.0.0-beta.36",
+    "@storybook/addon-links": "^7.0.0-beta.36",
+    "@storybook/blocks": "^7.0.0-beta.36",
+    "@storybook/react": "^7.0.0-beta.36",
+    "@storybook/react-vite": "^7.0.0-beta.36",
+    "@storybook/testing-library": "^0.0.13",
     "@types/node": "^18.11.18",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
+    "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "storybook": "^7.0.0-beta.36",
     "tslib": "^2.5.0",
     "typescript": "^4.9.4",
     "vite": "^4.0.4"
@@ -48,5 +59,8 @@
   "peerDependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
+  },
+  "dependencies": {
+    "class-variance-authority": "^0.4.0"
   }
 }
