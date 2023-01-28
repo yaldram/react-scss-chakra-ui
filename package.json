@@ -51,6 +51,7 @@
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "sass": "^1.57.1",
     "storybook": "^7.0.0-beta.36",
     "tslib": "^2.5.0",
     "typescript": "^4.9.4",

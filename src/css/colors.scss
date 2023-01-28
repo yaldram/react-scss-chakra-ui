@@ -1,0 +1,19 @@
+@use "./variables/colors" as *;
+
+@each $color, $value in $colors-map {
+  /* 
+    generate color classes for each color
+    .color-red500 { color: #E53E3E; }
+  */
+  .color-#{$color} {
+    color: $value;
+  }
+
+  /* 
+    generate bg color classes for each color
+    .bg-red500 { background-color: #E53E3E; }
+  */
+  .bg-#{$color} {
+    background-color: $value;
+  }
+}

@@ -1,0 +1,55 @@
+/* line height variables */
+$line-height-normal: normal;
+$line-height-none: 1;
+$line-height-shorter: 1.25;
+$line-height-short: 1.375;
+$line-height-base: 1.5;
+$line-height-tall: 1.625;
+$line-height-taller: 2;
+$line-height-xxs: .75rem;
+$line-height-xs: 1rem;
+$line-height-sm: 1.25rem;
+$line-height-lg: 1.5rem;
+$line-height-xl: 1.75rem;
+$line-height-xxl: 2rem;
+$line-height-3xl: 2.25rem;
+$line-height-4xl: 2.5rem;
+  
+/* letter spacing variables */
+$letter-spacing-tighter: -0.05em;
+$letter-spacing-tight: -0.025em;
+$letter-spacing-normal: 0;
+$letter-spacing-wide: 0.025em;
+$letter-spacing-wider: 0.05em;
+$letter-spacing-widest: 0.1em;
+
+/* font family variables */
+$font-heading: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$font-mono: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+
+/* font weight variables */
+$font-weight-hairline: 100;
+$font-weight-thin: 200;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-extrabold: 800;
+$font-weight-black: 900;
+
+/* font size variables */
+$font-size-xs: 0.75rem;
+$font-size-sm: 0.875rem;
+$font-size-md: 1rem;
+$font-size-lg: 1.125rem;
+$font-size-xl: 1.25rem;
+$font-size-2xl: 1.5rem;
+$font-size-3xl: 1.875rem;
+$font-size-4xl: 2.25rem;
+$font-size-5xl: 3rem;
+$font-size-6xl: 3.75rem;
+$font-size-7xl: 4.5rem;
+$font-size-8xl: 6rem;
+$font-size-9xl: 8rem;
