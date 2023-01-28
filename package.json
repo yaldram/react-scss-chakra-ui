@@ -1,0 +1,52 @@
+{
+  "name": "@yaldram/react-scss-chakra-ui",
+  "version": "0.0.1",
+  "description": "A chakra clone design-system using react, scss, class-variance-authority, only static sites, no css in js.",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "source": "src/index.ts",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs"
+    },
+    "./dist/css/main.css": {
+      "import": "./dist/css/main.css"
+    }
+  },
+  "scripts": {
+    "build": "tsc && vite build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yaldram/react-scss-chakra-ui.git"
+  },
+  "keywords": [
+    "react",
+    "scss",
+    "class-variance-authority"
+  ],
+  "author": "Arsalan Yaldram.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yaldram/react-scss-chakra-ui/issues"
+  },
+  "homepage": "https://github.com/yaldram/react-scss-chakra-ui#readme",
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^11.0.0",
+    "@types/node": "^18.11.18",
+    "@types/react": "^18.0.27",
+    "@types/react-dom": "^18.0.10",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tslib": "^2.5.0",
+    "typescript": "^4.9.4",
+    "vite": "^4.0.4"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
