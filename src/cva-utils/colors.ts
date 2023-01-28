@@ -237,7 +237,6 @@ type ColorMap = Record<(typeof colorPalette)[number], string>;
  *  { red500: bg-red500 }
  */
 function generateColorMap(classPrefix: string) {
-  console.log("I AM CALLED");
   return colorPalette.reduce(
     (accumulator, color) => ({
       ...accumulator,
