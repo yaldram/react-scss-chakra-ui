@@ -1,0 +1,96 @@
+@use "sass:map";
+
+/* base alert styles */
+.alert {
+  --alert-icon-color: none;
+
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  padding: $spacing-sm;
+
+  @each $color in $colors-list {
+    $color-100: map.get($colors-map, #{$color + '100'});
+    $color-200: map.get($colors-map, #{$color + '200'});
+    $color-500: map.get($colors-map, #{$color + '500'});
+
+    $color-white: map.get($colors-map, "white");
+    $color-black: map.get($colors-map, "black");
+
+    /* alert variant subtle, left-accent, top-accent common styles */ 
+    &.subtle.#{"" + $color}, 
+    &.top-accent.#{"" + $color},  
+    &.left-accent.#{"" + $color}  {
+      background-color: $color-100;
+      color: $color-black;
+      --alert-icon-color: #{$color-500};
+      
+      [data-theme="dark"] & {
+        background-color: rgba($color-200, 0.16);
+        color: $color-white;
+        --alert-icon-color: #{$color-200};
+      }
+    }
+
+    /* alert variant top-accent with colorscheme & dark mode */ 
+    &.top-accent.#{"" + $color} {
+      padding-inline-start: $spacing-md;
+      border-top-width: 4px;
+      border-top-style: solid;
+      border-top-color: $color-500;
+
+      [data-theme="dark"] & {
+        border-top-color: $color-200;
+      }
+    }
+
+    /* alert variant left-accent with colorscheme & dark mode */ 
+    &.left-accent.#{"" + $color} {
+      padding-inline-start: $spacing-md;
+      border-left-width: 4px;
+      border-left-style: solid;
+      border-left-color: $color-500;
+      
+      [data-theme="dark"] & {
+        border-left-color: $color-200;
+      }
+    }
+
+    /* alert variant solid with colorscheme & dark mode */ 
+    &.solid.#{"" + $color} {
+      background-color: $color-500;
+      color: $color-white;
+      --alert-icon-color: #{$color-white};
+      
+      [data-theme="dark"] & {
+        background-color: $color-200;
+        color: map.get($colors-map, "gray900");
+        --alert-icon-color: #{$color-black};
+      }
+    }
+  }
+
+  & > .alert-icon {
+    color: var(--alert-icon-color);
+  }
+}
+
+
+.alert-icon {
+  display: inline;
+  flex-shrink: 0;
+  margin-inline-end: $spacing-md;
+  width: 1.25rem;
+  height: 1.5rem;
+}
+
+.alert-title {
+  font-weight: $font-weight-semibold;
+  line-height: $line-height-tall;
+  margin-inline-end: $spacing-xxs;
+}
+
+.alert-description {
+  display: inline;
+  line-height: $line-height-taller;
+}
