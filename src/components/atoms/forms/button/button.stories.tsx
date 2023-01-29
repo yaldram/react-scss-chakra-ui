@@ -217,24 +217,28 @@ export const Default: StoryObj<ButtonProps> = {
             icon={<EmailIcon />}
             size={size}
             aria-label="Icon Button"
+            colorScheme={colorScheme}
           />
           <IconButton
             icon={<EmailIcon />}
             size={size}
             aria-label="Icon Button"
             variant="outline"
+            colorScheme={colorScheme}
           />
           <IconButton
             icon={<EmailIcon />}
             size={size}
             aria-label="Icon Button"
             variant="ghost"
+            colorScheme={colorScheme}
           />
           <IconButton
             icon={<EmailIcon />}
             size={size}
             aria-label="Icon Button"
             variant="link"
+            colorScheme={colorScheme}
           />
         </Flex>
       </Flex>

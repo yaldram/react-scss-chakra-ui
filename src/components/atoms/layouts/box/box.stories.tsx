@@ -74,11 +74,15 @@ export const Playground: StoryObj<BoxProps> = {
       },
     },
   },
-  render: (args) => <Box {...args}>Box Component</Box>,
+  render: (args) => (
+    <Box style={{ width: "100%" }} {...args}>
+      Box Component
+    </Box>
+  ),
 };
 
 export const Default = () => (
-  <Box p="lg" color="white" bg="teal700">
+  <Box style={{ width: "100%" }} p="lg" color="white" bg="teal700">
     Button
   </Box>
 );

@@ -88,7 +88,7 @@ export const Playground: StoryObj<FlexProps> = {
     },
   },
   render: (args) => (
-    <Flex bg="blue100" color="white" p="md" {...args}>
+    <Flex style={{ width: "100%" }} bg="blue100" color="white" p="md" {...args}>
       <Container bg="green500">Box 1</Container>
       <Container bg="blue500">Box 2</Container>
       <Container bg="orange500">Box 3</Container>
@@ -117,7 +117,7 @@ export const FlexSpacer = {
   },
   render: (args: FlexProps) => (
     <Flex
-      style={{ height: "80vh" }}
+      style={{ width: "100%", height: "80vh" }}
       color="white"
       bg="blackAlpha200"
       p="xs"
@@ -182,7 +182,7 @@ export const Stack: StoryObj<FlexProps> = {
   },
   render: (args) => (
     <Flex
-      style={{ minHeight: "100vh" }}
+      style={{ width: "100%", minHeight: "100vh" }}
       color="white"
       bg="blue100"
       p="md"
