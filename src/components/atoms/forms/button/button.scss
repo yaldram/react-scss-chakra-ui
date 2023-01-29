@@ -266,3 +266,34 @@
     }
   }
 }
+
+.button-spinner {
+  display: flex;
+  font-size: 1em;
+  line-height: normal;
+  align-items: center;
+  position: relative;
+  color: currentColor;
+  margin: 0px;
+
+  &.start {
+    margin-right: 0.5rem;
+  }
+
+  &.end {
+    margin-left: 0.5rem;
+  }
+
+  &.isAbsolute {
+    position: absolute;
+  }
+}
+
+.icon-button {
+  padding: 0px !important;
+  border-radius: 0.375rem;
+
+  &.isRound {
+    border-radius: 9999px;
+  }
+}

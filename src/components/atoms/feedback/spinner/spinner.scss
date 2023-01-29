@@ -1,0 +1,54 @@
+@keyframes spinner-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner {
+  --thickness: 2px;
+  --speed: 0.4s;
+
+  display: inline-block;
+  color: currentColor;
+
+  border-color: currentColor;
+  border-style: solid;
+  border-radius: 9999px;
+  border-width: var(--thickness);
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+
+  width: 1em;
+  height: 1em;
+
+  animation: spinner-animation var(--speed) linear infinite;
+
+  &.xs {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  &.sm {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  &.md {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  &.lg {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  &.xl {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+}
