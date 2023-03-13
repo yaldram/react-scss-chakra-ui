@@ -2,7 +2,7 @@ import React from "react";
 import { StoryObj } from "@storybook/react";
 
 import { Alert, AlertIcon, AlertDescription, AlertTitle, AlertProps } from ".";
-import { Box, Flex } from "../../atoms/layouts";
+import { Flex } from "../../atoms/layouts";
 import { colorsList } from "../../../cva-utils";
 
 export default {
@@ -87,14 +87,10 @@ export const AlertStatus: StoryObj<AlertProps> = {
     <Alert {...args}>
       <AlertIcon />
       <Flex direction="col">
-        <Box>
-          <AlertTitle>Your browser is outdated!</AlertTitle>
-        </Box>
-        <Box>
-          <AlertDescription>
-            Your Chakra experience may be degraded.
-          </AlertDescription>
-        </Box>
+        <AlertTitle>Your browser is outdated!</AlertTitle>
+        <AlertDescription>
+          Your Chakra experience may be degraded.
+        </AlertDescription>
       </Flex>
     </Alert>
   ),

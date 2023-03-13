@@ -109,28 +109,15 @@ export function AlertDescription({
 
 export interface AlertIconProps extends BoxProps {}
 
-const alertIcon = cva(["alert-icon"], {
-  variants: {
-    variant: {
-      subtle: "subtle",
-      "left-accent": "left-accent",
-      "top-accent": "top-accent",
-      solid: "solid",
-    },
-  },
-  defaultVariants: {
-    variant: "subtle",
-  },
-});
+const alertIcon = cva(["alert-icon"]);
 
 export function AlertIcon(props: AlertIconProps) {
-  const { status, variant, colorScheme } = useAlertContext();
+  const { status, colorScheme } = useAlertContext();
   const { colorScheme: statusColorScheme, icon: BaseIcon } = STATUSES[status];
 
   const iconColorScheme = colorScheme ?? statusColorScheme;
 
   const alertIconClasses = alertIcon({
-    variant,
     className: iconColorScheme,
   });
 
