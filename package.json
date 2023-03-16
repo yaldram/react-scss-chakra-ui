@@ -38,13 +38,13 @@
   "homepage": "https://github.com/yaldram/react-scss-chakra-ui#readme",
   "devDependencies": {
     "@rollup/plugin-typescript": "^11.0.0",
-    "@storybook/addon-essentials": "^7.0.0-beta.36",
-    "@storybook/addon-interactions": "^7.0.0-beta.36",
-    "@storybook/addon-links": "^7.0.0-beta.36",
-    "@storybook/blocks": "^7.0.0-beta.36",
-    "@storybook/react": "^7.0.0-beta.36",
-    "@storybook/react-vite": "^7.0.0-beta.36",
-    "@storybook/testing-library": "^0.0.13",
+    "@storybook/addon-essentials": "^7.0.0-rc.3",
+    "@storybook/addon-interactions": "^7.0.0-rc.3",
+    "@storybook/addon-links": "^7.0.0-rc.3",
+    "@storybook/blocks": "^7.0.0-rc.3",
+    "@storybook/react": "^7.0.0-rc.3",
+    "@storybook/react-vite": "^7.0.0-rc.3",
+    "@storybook/testing-library": "^0.0.14-next.1",
     "@types/node": "^18.11.18",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
@@ -52,10 +52,10 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sass": "^1.57.1",
-    "storybook": "^7.0.0-beta.36",
+    "storybook": "^7.0.0-rc.3",
     "tslib": "^2.5.0",
     "typescript": "^4.9.4",
-    "vite": "^4.0.4"
+    "vite": "^4.2.0"
   },
   "peerDependencies": {
     "react": "^18.2.0",
