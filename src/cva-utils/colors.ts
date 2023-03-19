@@ -1,7 +1,7 @@
 import { cva, VariantProps } from "class-variance-authority";
 
 // all color schemes
-export const colorsList = [
+export const colorSchemes = [
   "whiteAlpha",
   "blackAlpha",
   "gray",
@@ -22,7 +22,7 @@ export const colorsList = [
   "telegram",
 ] as const;
 
-export type ColorScheme = (typeof colorsList)[number];
+export type ColorScheme = (typeof colorSchemes)[number];
 
 const colorPalette = [
   "white",

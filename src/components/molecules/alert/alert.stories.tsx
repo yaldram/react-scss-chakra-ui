@@ -3,7 +3,7 @@ import { StoryObj } from "@storybook/react";
 
 import { Alert, AlertIcon, AlertDescription, AlertTitle, AlertProps } from ".";
 import { Flex } from "../../atoms/layouts";
-import { colorsList } from "../../../cva-utils";
+import { colorSchemes } from "../../../cva-utils";
 
 export default {
   title: "Molecules/Alert",
@@ -18,7 +18,7 @@ export const Playground: StoryObj<AlertProps> = {
     colorScheme: {
       name: "colorScheme",
       type: { name: "string", required: false },
-      options: colorsList,
+      options: colorSchemes,
       description: "The Color Scheme for the button",
       table: {
         type: { summary: "string" },

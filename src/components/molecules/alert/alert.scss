@@ -9,7 +9,7 @@
   overflow: hidden;
   padding: $spacing-sm;
 
-  @each $color in $colors-list {
+  @each $color in $color-schemes {
     $color-100: map.get($colors-map, #{$color + '100'});
     $color-200: map.get($colors-map, #{$color + '200'});
     $color-500: map.get($colors-map, #{$color + '500'});

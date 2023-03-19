@@ -1,7 +1,7 @@
 import * as React from "react";
 import { StoryObj } from "@storybook/react";
 
-import { colorsList, spacingControls } from "../../../../cva-utils";
+import { colorSchemes, spacingControls } from "../../../../cva-utils";
 import { Flex } from "../../layouts";
 import { ArrowForwardIcon, EmailIcon } from "../../icons";
 import { Button, ButtonProps } from "./button";
@@ -41,7 +41,7 @@ export const Playground: StoryObj<ButtonProps> = {
     colorScheme: {
       name: "colorScheme",
       type: { name: "string", required: false },
-      options: colorsList,
+      options: colorSchemes,
       description: "The Color Scheme for the button",
       table: {
         type: { summary: "string" },
@@ -107,7 +107,7 @@ export const Default: StoryObj<ButtonProps> = {
     colorScheme: {
       name: "colorScheme",
       type: { name: "string", required: false },
-      options: colorsList,
+      options: colorSchemes,
       description: "The Color Scheme for the button",
       table: {
         type: { summary: "string" },

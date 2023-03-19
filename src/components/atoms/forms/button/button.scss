@@ -98,7 +98,7 @@
     color: var(--active-color);
   }
 
-  @each $color in $colors-list {
+  @each $color in $color-schemes {
     $color-200: map.get($colors-map, #{$color + '200'});
     $color-500: map.get($colors-map, #{$color + '500'});
     $color-700: map.get($colors-map, #{$color + '700'});
@@ -151,7 +151,7 @@
   }
 }
 
-@each $color in $colors-list {
+@each $color in $color-schemes {
   @if ($color == gray) {
     .button.solid.gray {
       --bg : #{map.get($colors-map, "gray100")};
@@ -176,7 +176,7 @@
   }
 }
 
-@each $color in $colors-list {
+@each $color in $color-schemes {
   @if ($color == gray) {
     [data-theme="dark"] .button.solid.gray {
       --bg : #{map.get($colors-map, "whiteAlpha200")}; 
@@ -231,7 +231,7 @@
   }
 }
 
-@each $color in $colors-list {
+@each $color in $color-schemes {
   @if ($color == gray) {
     .button.ghost.gray, .button.outline.gray {
       --color: inherit;
@@ -247,7 +247,7 @@
   }
 }
 
-@each $color in $colors-list {
+@each $color in $color-schemes {
   @if ($color == "gray") {
     [data-theme="dark"] .button.ghost.gray, 
     [data-theme="dark"] .button.outline.gray {

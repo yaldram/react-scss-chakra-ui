@@ -2,7 +2,7 @@ import * as React from "react";
 import { StoryObj } from "@storybook/react";
 
 import { Badge, BadgeProps } from ".";
-import { colorsList } from "../../../cva-utils";
+import { colorSchemes } from "../../../cva-utils";
 
 export default {
   title: "Atoms/Badge",
@@ -31,7 +31,7 @@ export const Playground: StoryObj<BadgeProps> = {
     colorScheme: {
       name: "colorScheme",
       type: { name: "string", required: false },
-      options: colorsList,
+      options: colorSchemes,
       description: "The Color Scheme for the button",
       table: {
         type: { summary: "string" },
