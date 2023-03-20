@@ -37,13 +37,14 @@ export const Badge = React.forwardRef<HTMLDivElement, BadgeProps>(
       size,
       colorScheme = "green",
       children,
+      className,
       ...delegated
     } = props;
 
     const badgeClasses = badge({
       variant,
       size,
-      className: colorScheme,
+      className: [colorScheme, className].join(" "),
     });
 
     return (

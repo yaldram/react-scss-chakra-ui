@@ -22,6 +22,10 @@ export const Playground: StoryObj<ButtonProps> = {
     colorScheme: "green",
     size: "md",
     isFullWidth: false,
+    isLoading: false,
+    loadingText: "",
+    spinnerPlacement: "start",
+    isDisabled: false,
     m: "xxs",
   },
   argTypes: {
@@ -70,6 +74,57 @@ export const Playground: StoryObj<ButtonProps> = {
       description: "Full width button",
       table: {
         type: { summary: "boolean" },
+        defaultValue: { summary: "false" },
+      },
+      control: {
+        type: "boolean",
+      },
+    },
+    isLoading: {
+      name: "isLoading",
+      type: { name: "boolean", required: false },
+      description: "Pass the isLoading prop to show loading state.",
+      table: {
+        type: { summary: "string" },
+        defaultValue: { summary: "false" },
+      },
+      control: {
+        type: "boolean",
+      },
+    },
+    loadingText: {
+      name: "loadingText",
+      type: { name: "string", required: false },
+      description: "Prop to show a spinner and the loading text.",
+      table: {
+        type: { summary: "string" },
+        defaultValue: { summary: "-" },
+      },
+      control: {
+        type: "text",
+      },
+    },
+    spinnerPlacement: {
+      name: "spinnerPlacement",
+      type: { name: "string", required: false },
+      options: ["start", "end"],
+      description: `When a loadingText is present, you can change the
+      placement of the spinner element to either start or end.
+      It is start by default.`,
+      table: {
+        type: { summary: "string" },
+        defaultValue: { summary: "start" },
+      },
+      control: {
+        type: "select",
+      },
+    },
+    isDisabled: {
+      name: "isDisabled",
+      type: { name: "boolean", required: false },
+      description: "Pass the isDisable prop to show disabled state.",
+      table: {
+        type: { summary: "string" },
         defaultValue: { summary: "false" },
       },
       control: {
